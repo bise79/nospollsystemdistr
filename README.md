@@ -1,5 +1,6 @@
 # [Polling Application - NOS]
 
+For code review: https://github.com/blascokoa/nospollsystem
 original REPO: https://github.com/blascokoa/nOSpoll
 See contributors there.
 
