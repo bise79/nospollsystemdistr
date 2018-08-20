@@ -22,28 +22,28 @@ To begin using this app, follow steps to get started:
 
 # SmartContract Deploy
 
-Scripthash = 0xf3c691a512878f4c3823a3019eba04c33f6a6083
+Scripthash = 0x0dfbdd64e96689d5f4cfe5d289bf96bd5b270a1b
 
-* Instructions for deploy it:  import contract /smart-contracts/nospollcontract.avm 0710 07 True False
-* invoke 0xf3c691a512878f4c3823a3019eba04c33f6a6083 operation ["args"]
+* Instructions for deploy it:  import contract /smart-contracts/contract.avm 0710 05 True False
+* invoke 0x0dfbdd64e96689d5f4cfe5d289bf96bd5b270a1b operation ["args"]
 
 # SmartContract Operation Codes:
   
-  * *Create*: invoke 0xf3c691a512878f4c3823a3019eba04c33f6a6083 create ["PollCreatorPublicAdd","PollID","Question"]
+  * *Create*: invoke 0x0dfbdd64e96689d5f4cfe5d289bf96bd5b270a1b create ["PollCreatorPublicAdd","PollID","Question"]
 
-    The ID must he returned by the function GetStorage from NOS. `key = PollCreatorPublicAdd+"ID"`
+    Allow to create a poll.
     
-  * *Access*: invoke 0xf3c691a512878f4c3823a3019eba04c33f6a6083 access ["PollCreatorPublicAdd","PollID"]
+  * *Access*: invoke 0x0dfbdd64e96689d5f4cfe5d289bf96bd5b270a1b access ["PollCreatorPublicAdd","PollID"]
 
-    The question must be returned using the function GetStorage from NOS `key = PollCreatorPublicAdd+ID`
+    With Owner Address and Poll Id generated during the create phase, an user can access the poll.
     
-  * *Vote*: invoke 0xf3c691a512878f4c3823a3019eba04c33f6a6083 vote ["PollOwnerPublickAdd","PollID","OptionVoted"]
+  * *Vote*: invoke 0x0dfbdd64e96689d5f4cfe5d289bf96bd5b270a1b vote ["PollOwnerPublickAdd","PollID","OptionVoted"]
 
-    Will store the results and the data must be returned with the getStorage from NOS api `key = PollCreatorPublicAdd+ID+"V"` The string will got a format like:  `0ABAABBBAAA` 
+    With Owner Address and Poll Id generated during the create phase, an user can vote. 
       
-  * *Results*: invoke 0xf3c691a512878f4c3823a3019eba04c33f6a6083 results ["PollOwnerPublickAdd","PollID"]
+  * *Results*: invoke 0x0dfbdd64e96689d5f4cfe5d289bf96bd5b270a1b results ["PollOwnerPublickAdd","PollID"]
 
-    The data must be returned with the getStorage from NOS api `key = PollCreatorPublicAdd+ID+"V"` The string will got a format like:  `0ABAABBBAAA`
+    With Owner Address and Poll Id generated during the create phase, it is possible to get the results.
     
 
 
